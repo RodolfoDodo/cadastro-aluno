@@ -1,0 +1,26 @@
+<h1>Cadastro de Alunos</h1>
+<hr>
+<form>
+  <p>Nome: <input type="text" name="name" [(ngModel)]="aluno.nome"></p>
+  <p>Idade: <input type="text" name="idade" [(ngModel)]="aluno.idade"></p>
+  <button type="button" (click)="cadastrar()">Cadastrar</button>
+</form>
+
+<hr>
+<h1>Alunos Cadastrados</h1>
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>Idade</th>
+    <th>Ações</th>
+  </tr>
+
+  <tr *ngFor="let aluno of alunos">
+    <td>{{aluno.nome }}</td>
+    <td>{{aluno.idade}}</td>
+    <td><button (click)="atualizar(aluno.id)">Atulizar</button></td>
+    <td><button (click)="remover(aluno.id)">Remover</button></td>
+
+  </tr>
+</table>
+
